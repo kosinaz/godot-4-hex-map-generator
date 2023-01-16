@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://733janxcjiul"]
+
+[ext_resource type="Script" path="res://map_generator.gd" id="1_5pry6"]
+[ext_resource type="Texture2D" uid="uid://dmv1uwoe4usdr" path="res://assets/tileset.png" id="2_s2v23"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj6b7"]
+texture = ExtResource("2_s2v23")
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_46for"]
+tile_shape = 3
+tile_layout = 1
+tile_offset_axis = 1
+sources/3 = SubResource("TileSetAtlasSource_fj6b7")
+
+[node name="Map Generator" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_5pry6")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_46for")
+format = 2
